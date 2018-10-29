@@ -1,0 +1,18 @@
+<div>
+  <input type="text" [(ngModel)]="search">
+  <table style="width:100%">
+    <tr>
+      <th>Title</th>
+      <th>Url</th>
+      <th>Created At</th>
+      <th>Author</th>
+    </tr>
+    <tr *ngFor="let x of data | myfilter:search.toUpperCase()">
+      <td>{{x.title}}</td>
+      <td>{{x.url}}</td>
+      <td><a [routerLink]="['/sample_test',x]">{{x.created_at}}</a></td>
+      <td>{{x.author}}</td>
+    </tr>
+  </table>
+
+</div>
